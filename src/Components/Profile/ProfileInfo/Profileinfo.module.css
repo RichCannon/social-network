@@ -1,0 +1,22 @@
+.profileImg {
+    margin-left: 2%;
+   /* transform: translateX(-50%);*/
+    border-radius: 20px;
+    margin-top: 1%;
+    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+    width: 300px;
+    height: 300px;
+}
+
+.userName {
+    margin: 1%;
+}
+
+.userInfo {
+    display: flex;
+}
+
+.statusAndName {
+    flex-direction: column;
+    flex-grow: 1;
+}

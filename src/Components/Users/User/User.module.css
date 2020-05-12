@@ -1,0 +1,29 @@
+.ava {
+    width: 69px;
+    height: 69px;
+    border-radius: 34.5px;
+}
+.nameAndStatus {
+    flex-direction: column;
+    flex-grow: 10;
+}
+.avaAndFollow {
+    flex-direction: column;
+    margin-left:20px;
+    flex-grow: 1;
+}
+
+.userCont {
+    display: flex;
+    border:2px black solid;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+    background-color: whitesmoke;
+    padding:5px;
+}
+
+.location {
+    flex-direction: column;
+}
+

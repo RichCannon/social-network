@@ -1,0 +1,14 @@
+.item {
+    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+    border: black 2px solid;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 5px;
+    background-color: whitesmoke;
+}
+
+.item img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}

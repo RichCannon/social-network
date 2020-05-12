@@ -1,0 +1,26 @@
+.allMessages {
+    height: 100%;
+
+    padding:10px;
+    margin: 10px;
+
+    border: 2px black solid;
+    border-radius: 20px;
+
+    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+    background-color: whitesmoke;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+}
+
+.sendButton {
+    width: 100px;
+    flex-direction: row-reverse;
+}
+
+.sendMessageField {
+    width:100%;
+}
