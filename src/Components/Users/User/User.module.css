@@ -4,22 +4,25 @@
     border-radius: 34.5px;
 }
 .nameAndStatus {
+    display: flex;
     flex-direction: column;
-    flex-grow: 10;
+    flex-grow: 11;
 }
 .avaAndFollow {
+    display: flex;
     flex-direction: column;
     margin-left:20px;
     flex-grow: 1;
+    justify-content: center;
+    align-items: center;
 }
 
 .userCont {
     display: flex;
-    border:2px black solid;
-    margin: 20px;
-    border-radius: 20px;
+
+    border-radius: 5px;
     box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
-    background-color: whitesmoke;
+    background-color: white;
     padding:5px;
 }
 

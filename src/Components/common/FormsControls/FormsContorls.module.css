@@ -1,12 +1,15 @@
+/*
 .formControl.error input  {
     border: 2px solid red;
 }
 
 .formControl.error span  {
     color: red;
-}
+}*/
 
 .serverError {
-    color: red;
-    border: red 1px solid;
+ width: 30%;
+    margin-bottom: 1%;
 }
+
+

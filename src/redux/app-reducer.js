@@ -25,8 +25,8 @@ export const initializedSuccess = () => ({
 })
 
 export const initializingProcess = () => {
-    return  (dispatch) => {
-     dispatch(getAuth());
+    return async (dispatch) => {
+     await dispatch(getAuth());
      dispatch(initializedSuccess());
     }
 }

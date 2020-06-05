@@ -1,9 +1,10 @@
 .ldsRipple {
+    margin-top: 10%;
+    margin-left: 10%;
     display: inline-block;
-    position: relative;
+    position: fixed;
     width: 80px;
     height: 80px;
-    border: 3px solid black;
 }
 .ldsRipple div {
     position: absolute;
@@ -11,6 +12,7 @@
     opacity: 1;
     border-radius: 50%;
     animation: ldsRipple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+
 }
 .ldsRipple div:nth-child(2) {
     animation-delay: -0.5s;

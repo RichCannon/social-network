@@ -1,42 +1,47 @@
 import React from "react";
 import s from './User.module.css';
-import noPhoto from "../../../asses/img/no-ava.png"
 import {NavLink} from "react-router-dom";
+import {Avatar, Button, Col, Row, Typography} from "antd";
+import UserOutlined from "@ant-design/icons/lib/icons/UserOutlined";
 
 
-const User = ({handlerToggleFollow,followedUsersId,user}) => {
 
+const User = ({handlerToggleFollow, followedUsersId, user}) => {
+    const {Title} = Typography;
 
     return (
-        <div>
-            {
+        <Row gutter={[0, 24]}  >
+            <Col span={24}>
                 <div className={s.userCont}>
                     <div className={s.avaAndFollow}>
                         <div>
                             <NavLink to={`/profile/${user.id}`}>
-                                <img className={s.ava} src={user.photos.small ? user.photos.small : noPhoto}/>
+                                <Avatar size={70} src={user.photos.small} icon={<UserOutlined />}/>
                             </NavLink>
                         </div>
                         <div>
-                            <button
+                            <Button
+                                type={user.followed ? '' : 'primary'}
+                                danger={user.followed}
                                 disabled={followedUsersId.some(id => id === user.id)}
                                 onClick={() => handlerToggleFollow(user.id, user.followed)}>
-                                {user.followed ? "FOLLOW" : "UNFOLLOW"}
-                            </button>
+                                {user.followed ? "UNFOLLOW" : "FOLLOW"}
+                            </Button>
 
                         </div>
                     </div>
                     <div className={s.nameAndStatus}>
-                        <div>{user.name}</div>
+                        <Title level={4}>{user.name}</Title>
                         <div>{user.status}</div>
                     </div>
                     <div className={s.location}>
-                        <div>{"user.location.city"}</div>
-                        <div>{"user.location.country"}</div>
+                        <div>{'user.location.city'}</div>
+                        <div>{'user.location.country'}</div>
                     </div>
                 </div>
-            }
-        </div>
+            </Col>
+        </Row>
+
     )
 }
 

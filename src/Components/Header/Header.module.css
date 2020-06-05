@@ -1,3 +1,5 @@
+
+
 .header {
     grid-area: h;
     background-color: greenyellow;
@@ -18,4 +20,9 @@ header img {
 
 .logBut a {
     text-decoration: none;
+}
+
+.siteLogo {
+    width: 50px;
+
 }

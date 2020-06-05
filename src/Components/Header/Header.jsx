@@ -1,32 +1,43 @@
 import React from "react";
 import s from './Header.module.css';
 import {NavLink} from "react-router-dom";
-import logo from "../../asses/img/logo.png"
+import logo from "../../assets/img/logo.bmp"
+import {Layout, Menu} from "antd";
 
-const Header = (props) => {
+const {Header} = Layout;
+
+const HeaderComponent = (props) => {
     const loginLogout = () => {
         if (props.login) {
             return (
-                <>
-                    <div onClick={props.logout}>
+                <Menu style={{float: 'right'}} theme={"dark"} mode="horizontal">
+                    <Menu.Item key={'1'} onClick={props.logout}>
                         LOGOUT
-                    </div>
-                    <div>{props.login}</div>
-                </>
+                    </Menu.Item>
+                    <Menu.Item key={'2'} disabled={true}>{props.login}</Menu.Item>
+                </Menu>
+
             )
         }
-        return (<NavLink to='/login'>LOGIN</NavLink>)
+        return (
+            <Menu style={{float: 'right'}} theme={"dark"} mode="horizontal">
+                <Menu.Item key={'1'}>
+                    <NavLink to='/login'>LOGIN</NavLink>
+                </Menu.Item>
+            </Menu>
+        )
     }
 
     return (
-        <header className={s.header}>
-            <img alt={'Loading...'} src={logo}/>
+        <Header className={'header'}>
+            <NavLink to={'/profile'}>
+                <img className={s.siteLogo} alt={'Loading...'} src={logo}/>
+            </NavLink>
 
-            <div className={s.logBut}>
-                {loginLogout()}
-            </div>
-        </header>
+            {loginLogout()}
+        </Header>
+
     );
 }
 
-export default Header;
+export default HeaderComponent;

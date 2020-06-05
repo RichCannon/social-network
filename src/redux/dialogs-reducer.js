@@ -4,27 +4,15 @@ let initialState = { //dialogs
     messageData: [
         {
             id: 1,
-            name: 'Chpekun',
-            imgURL: 'https://sun9-60.userapi.com/c841621/v841621742/41562/b_hg5W14Mio.jpg',
-            message: ['Kak zhe hochetsya...']
+            name: 'Jack Stauber',
+            imgURL: 'https://7lafa.com/musicians/jack_stauber.jpg',
+            message: ['Hello']
         },
         {
             id: 2,
-            name: 'Lyaseg',
-            imgURL: 'https://sun9-60.userapi.com/c856128/v856128830/609c0/Ma8ekfEy168.jpg',
-            message: ['zarabativayu 300k sec']
-        },
-        {
-            id: 3,
-            name: 'Pukicj',
-            imgURL: 'https://sun9-6.userapi.com/c631426/v631426535/173b/KFLNPAcI3K8.jpg',
-            message: ['*/me raskrivayu fantik*']
-        },
-        {
-            id: 4,
-            name: 'Tyanochka',
-            imgURL: 'https://sun9-21.userapi.com/c627431/v627431683/350a7/6YwWDNXJZio.jpg',
-            message: ['pokazhi chlen']
+            name: 'Mac DeMarco',
+            imgURL: 'https://media.gq.com/photos/5ca78f84e03e8148480e5219/master/w_1600%2Cc_limit/mac-demarco-gq-may-2019-02.jpg',
+            message: [`How ya doin'`]
         }
     ]
 };

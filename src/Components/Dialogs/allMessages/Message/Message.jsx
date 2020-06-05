@@ -1,11 +1,14 @@
 import React from "react";
-import s from "./Message.module.css";
+
+import {Col, Row} from "antd";
 
 const Message = (props) => {
     return (
-        <div className={s.message}>
-            {props.message}
-        </div>
+        <Row  gutter={[0,16]}>
+            <Col>
+                {props.message}
+            </Col>
+        </Row>
     );
 }
 

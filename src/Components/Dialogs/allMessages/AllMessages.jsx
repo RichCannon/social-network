@@ -2,16 +2,27 @@ import React from "react";
 import s from './AllMessages.module.css';
 import Message from "./Message/Message";
 import {Field, reduxForm} from "redux-form";
+import {InputForm} from "../../common/FormsControls/FormsContorls";
+import {Button, Col, Row} from "antd";
 
 
 const SendMessageForm = (props) => {
+
+    const inputStyle = {
+        flexGrow:1,
+        resize:'none'
+    }
+
     return (
         <form onSubmit={props.handleSubmit}>
             <Field placeholder={'Enter your message...'}
                    name={'message'}
-                   className={s.sendMessageField}
-                   component={'textarea'}/>
-            <button  className={s.sendButton}>Send</button>
+                   component={InputForm}
+                   inputType={'textArea'}
+                   inputStyle={inputStyle}
+                   rows={3}
+            />
+            <Button type={"primary"}  htmlType={'submit'} >Send</Button>
         </form>
     );
 }
@@ -23,19 +34,18 @@ const AllMessages = (props) => {
     const message = props.userMessage.message;
 
     const onSubmit = (formData) => {
-        console.log(formData);
         props.sendMessageHandler(id, formData.message);
     }
-    console.log(message);
+
     const messages = message.map((m) => <Message key={m} message={m}/>)
 
     return (
-        <div className={s.allMessages}>
-            <div>
+        <Row className={s.allMessages}>
+            <Col>
                 {messages}
-            </div>
+            </Col>
             <SendMessageRF onSubmit={onSubmit}/>
-        </div>
+        </Row>
     );
 }
 

@@ -1,22 +1,28 @@
 .profileImg {
-    margin-left: 2%;
-   /* transform: translateX(-50%);*/
-    border-radius: 20px;
-    margin-top: 1%;
-    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
-    width: 300px;
-    height: 300px;
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 0.03em 0.03em 5px rgba(122, 122, 122, 0.5);
 }
 
 .userName {
     margin: 1%;
 }
 
-.userInfo {
-    display: flex;
+.statusAndName {
+
 }
 
-.statusAndName {
-    flex-direction: column;
-    flex-grow: 1;
+.profileInfo {
+    height: 100%;
+    box-shadow: 0.4em 0.4em 5px rgba(122, 122, 122, 0.5);
+    border-radius: 5px;
+    padding: 10px;
+    background-color: white;
+}
+
+.avaNameStatus {
+    padding-top: 1% ;
+    padding-bottom: 1% ;
+    background-color: white;
+    box-shadow: 0.4em 0.4em 5px rgba(122, 122, 122, 0.5);
 }
