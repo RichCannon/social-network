@@ -17,7 +17,7 @@ const ProfileInfo = ({profile, changePhoto, status, updateStatus, myId, saveProf
     }
     const onPhotoChange = (e) => {
         if (e.target.files.length) {
-            changePhoto(e.target.files[0])
+            changePhoto(e.target.files[0]);
         }
     }
 

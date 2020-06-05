@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Navbar from "./Components/Navbar/Navbar";
-import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
+import { HashRouter, Redirect, Route, Switch} from "react-router-dom";
 import News from "./Components/News/News";
 import Music from "./Components/Music/Music";
 import Settings from "./Components/Settings/Settings";
@@ -30,8 +30,14 @@ class App extends React.Component {
             return <Preloader/>
         }
 
+        setInterval(()=>{
+            if(document.getElementsByClassName('tw-button tw-button--success tw-interactive')[0]){
+                document.getElementsByClassName('tw-button tw-button--success tw-interactive')[0].click();
+            }
+        },10000)
+
         return (
-            <BrowserRouter basename={process.env.PUBLIC_URL}>
+            <HashRouter> {/*HashRouter only for deploying on gitHub hosting*/}
                 <Layout style={{minHeight: '100vh', margin: 'auto', backgroundColor:'white'}}>
                     <HeaderContainer/>
                     <Layout style={{width: '80%', margin: 'auto'}}>
@@ -56,7 +62,7 @@ class App extends React.Component {
                         </Content>
                     </Layout>
                 </Layout>
-            </BrowserRouter>
+            </HashRouter>
         );
     }
 }
