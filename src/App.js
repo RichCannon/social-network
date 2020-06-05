@@ -31,7 +31,7 @@ class App extends React.Component {
         }
 
         return (
-            <BrowserRouter /*basename={process.env.PUBLIC_URL}*/>
+            <BrowserRouter basename={process.env.PUBLIC_URL}>
                 <Layout style={{minHeight: '100vh', margin: 'auto', backgroundColor:'white'}}>
                     <HeaderContainer/>
                     <Layout style={{width: '80%', margin: 'auto'}}>
