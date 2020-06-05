@@ -30,11 +30,7 @@ class App extends React.Component {
             return <Preloader/>
         }
 
-        setInterval(()=>{
-            if(document.getElementsByClassName('tw-button tw-button--success tw-interactive')[0]){
-                document.getElementsByClassName('tw-button tw-button--success tw-interactive')[0].click();
-            }
-        },10000)
+
 
         return (
             <HashRouter> {/*HashRouter only for deploying on gitHub hosting*/}
