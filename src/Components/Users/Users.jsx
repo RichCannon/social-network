@@ -9,6 +9,7 @@ const Users = (props) => {
 
     const usersArray = props.users.map((user) => {
         return <User key={user.id}
+                     isAuth={props.isAuth}
                      handlerToggleFollow={props.handlerToggleFollow}
                      user={user}
                      followedUsersId={props.followedUsersId}/>

@@ -1,8 +1,4 @@
-.ava {
-    width: 69px;
-    height: 69px;
-    border-radius: 34.5px;
-}
+
 .nameAndStatus {
     display: flex;
     flex-direction: column;
@@ -11,7 +7,6 @@
 .avaAndFollow {
     display: flex;
     flex-direction: column;
-    margin-left:20px;
     flex-grow: 1;
     justify-content: center;
     align-items: center;

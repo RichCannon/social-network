@@ -125,18 +125,16 @@ export const unfollow = (userId) => async (dispatch) => {
 
 }
 
-export const follow = (userId) => {
-    return (dispatch) => {
-        usersAPI.postFollow(userId)
-            .then(data => {
-                if (data.resultCode !== 0) {
-                    console.error('Server error(postFollow)');
-                    return;
-                }
-                dispatch(toggleFollow(userId));
-                dispatch(followingInProgress(false, userId));
-            })
+export const follow = (userId) => async (dispatch) => {
+    let data = await usersAPI.postFollow(userId);
+
+    if (data.resultCode !== 0) {
+        console.error('Server error(postFollow)');
+        return;
     }
+    dispatch(toggleFollow(userId));
+    dispatch(followingInProgress(false, userId));
+
 }
 
 
