@@ -1,5 +1,5 @@
-import React from "react";
-/*import n from './Navbar.module.css';*/
+import React, {useState} from "react";
+import s from './Navbar.module.css';
 import {NavLink} from "react-router-dom";
 import {Menu} from "antd";
 import Sider from "antd/es/layout/Sider";
@@ -7,10 +7,23 @@ import Sider from "antd/es/layout/Sider";
 
 const Navbar = () => {
 
+    const [collapsible,setCollapsible] = useState(false)
+
+    const [collapsed,setCollapsed] = useState(false)
+
+
+
+
+    const onCollapse = collapsed => {
+        setCollapsed(collapsed)
+    }
 
     return (
-            <Sider style={{height: '100vh',
-                position: 'fixed',}} width={200} className="site-layout-background" mode={'inline'}>
+            <Sider breakpoint={'sm'}  collapsedWidth={0}
+                   collapsed={collapsed} onCollapse={onCollapse}
+                width={200}  mode={'inline'}
+                   className={s.sideBar}
+            >
                 <Menu theme={'dark'} mode={'inline'}>
                     <Menu.Item key='1'>
                         <NavLink to='/profile'>Profile</NavLink>

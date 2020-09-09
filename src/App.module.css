@@ -1,0 +1,26 @@
+.content {
+    width: 80vw;
+   align-self: center;
+    background-color: white;
+
+
+}
+.mainContent {
+    padding: .9vh;
+}
+
+@media (max-width: 1400px) {
+    .content {
+        width: 100vw;
+    }
+}
+
+
+@media (max-width: 575px) {
+    .content {
+        margin-top:14vh
+    }
+    .mainContent {
+        padding: 0;
+    }
+}

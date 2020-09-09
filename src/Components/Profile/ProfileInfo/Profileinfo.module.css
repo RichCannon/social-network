@@ -1,6 +1,7 @@
 .profileImg {
-    max-width: 100%;
-    border-radius: 5px;
+
+    min-width: 100%;
+    height: auto;
     box-shadow: 0.03em 0.03em 5px rgba(122, 122, 122, 0.5);
 }
 
@@ -15,14 +16,58 @@
 .profileInfo {
     height: 100%;
     box-shadow: 0.4em 0.4em 5px rgba(122, 122, 122, 0.5);
-    border-radius: 5px;
     padding: 10px;
     background-color: white;
 }
 
+
+
 .avaNameStatus {
+    display: flex;
     padding-top: 1% ;
     padding-bottom: 1% ;
     background-color: white;
     box-shadow: 0.4em 0.4em 5px rgba(122, 122, 122, 0.5);
+    min-height: 100% ;
+
+
 }
+
+.containerANS {
+
+}
+
+.containerData {
+    min-width: 30%;
+}
+
+
+/*@media (max-width: 1160px) {
+    .profile {
+        flex-direction: column;
+    }
+}*/
+
+
+
+@media (max-width: 1199px) {
+    .profile {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .avaNameStatus {
+        display: flex;
+        justify-content: center;
+        height: auto;
+    }
+    .containerData,
+    .containerANS {
+       min-width: 100%;
+
+    }
+    .avaCont {
+
+    }
+}
+

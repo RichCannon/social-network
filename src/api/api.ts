@@ -1,8 +1,12 @@
-import * as axios from "axios";
+import axios from "axios";
+import {ProfileType} from "../types/types";
+
+const BASE_URL =  `https://social-network.samuraijs.com/api/1.0/`
+
 
 
 const instance = axios.create({
-    baseURL: `https://social-network.samuraijs.com/api/1.0/`,
+    baseURL:BASE_URL,
     withCredentials: true,
     headers: {
         'API-KEY': 'dbf5504c-f2e0-4dbe-bf14-76c4460daab1'
@@ -12,15 +16,15 @@ const instance = axios.create({
 
 export const usersAPI = {
 
-    getUsersAPI(pageSize, currentPage) {
+    getUsersAPI(pageSize:number, currentPage:number) {
         return instance.get(`users?count=${pageSize}&page=${currentPage}`)
             .then(response => response.data)
     },
-    postFollow(userId) {
+    postFollow(userId:number) {
         return instance.post(`follow/${userId}`)
             .then(response => response.data)
     },
-    deleteFollow(userId) {
+    deleteFollow(userId:number) {
         return instance.delete(`follow/${userId}`)
             .then(response => response.data)
     }
@@ -28,37 +32,52 @@ export const usersAPI = {
 
 
 export const profileAPI = {
-    getUsersProfile(userId) {
+    getUsersProfile(userId:number) {
         return instance.get(`profile/${userId}`)
             .then(response => response.data)
     },
-    getStatusAPI(userId) {
+    getStatusAPI(userId:number) {
         return instance.get(`profile/status/${userId}`)
             .then(response => response.data)
     },
-    updateStatusAPI(status) {
+    updateStatusAPI(status:string) {
         return instance.put('profile/status', {status: status});
     },
-    changePhoto(file) {
+    changePhoto(file:any) {
         const formData = new FormData();
         formData.append('image', file);
         return instance.put('profile/photo', formData, {
-            "Content-Type": "multipart/form-data"
+            headers:{
+                "Content-Type": "multipart/form-data"
+            }
         }).then(response => response.data)
     },
-    putProfile(profile) {
+    putProfile(profile:ProfileType) {
         return instance.put('profile',profile)
     }
 
 }
 
+
+interface GetAuthResponseType {
+    data: { id:number, login: string, email:string }
+    resultCode: number
+    messages: Array<string>
+}
+
+interface LoginResponseType {
+    resultCode: number
+    messages: Array<string>
+    data: { userId: number }
+}
+
 export const authAPI = {
     getAuthAPI() {
-        return instance.get(`auth/me`)
+        return instance.get<GetAuthResponseType>(`auth/me`)
             .then(response => response.data)
     },
-    login(email, password, rememberMe, captcha) {
-        return instance.post('auth/login', {email, password, rememberMe, captcha})
+    login(email:string, password:string, rememberMe:boolean, captcha:string | null = null) {
+        return instance.post<LoginResponseType>('auth/login', {email, password, rememberMe, captcha})
             .then(response => response.data)
     },
     logout() {

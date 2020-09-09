@@ -1,4 +1,16 @@
-const SEND_MESSAGE = 'my-app/dialogs/SEND-MESSAGE';
+
+
+const SEND_MESSAGE = 'my-app/dialogs/SEND-MESSAGE'
+
+
+
+
+type DialogType = {
+    id: number
+    name:string
+    imgURL: string
+    message: Array<string>
+}
 
 let initialState = { //dialogs
     messageData: [
@@ -14,10 +26,12 @@ let initialState = { //dialogs
             imgURL: 'https://media.gq.com/photos/5ca78f84e03e8148480e5219/master/w_1600%2Cc_limit/mac-demarco-gq-may-2019-02.jpg',
             message: [`How ya doin'`]
         }
-    ]
+    ] as Array<DialogType>
 };
 
-const dialogsReducer = (state = initialState, action) => {
+type InitialStateType = typeof initialState
+
+const dialogsReducer = (state = initialState, action:ActionCreatorsType):InitialStateType => {
 
     switch (action.type) {
         case SEND_MESSAGE: {
@@ -37,7 +51,15 @@ const dialogsReducer = (state = initialState, action) => {
     }
 }
 
-export const sendMessage = (id, currentMessage) => ({
+type ActionCreatorsType = SendMessageType
+
+type SendMessageType = {
+    type: typeof SEND_MESSAGE
+    id: number,
+    currentMessage: string
+}
+
+export const sendMessage = (id:number, currentMessage:string):SendMessageType => ({
     type: SEND_MESSAGE,
     id,
     currentMessage

@@ -1,11 +1,30 @@
-import React from "react";
+import React,{FC} from "react";
 import s from './Users.module.css';
-import Pagination from "../common/Pagination/Pagination";
 import User from "./User/User";
 import {Col, Row} from "antd";
+import {UserItemType} from "../../types/types";
+import Pagination from "../common/Pagination/Pagination";
 
 
-const Users = (props) => {
+
+export interface PropsType  {
+    users: UserItemType[]
+    isAuth: boolean
+    followedUsersId: number[]
+    pageSize: number
+    totalCount: number
+    currentPage: number
+
+
+    handlerToggleFollow: (userId:number, followStatus:boolean)=> void
+    onPageChanged: (pageNumber: number) => void
+}
+
+
+
+
+
+const Users:FC<PropsType> = (props) => {
 
     const usersArray = props.users.map((user) => {
         return <User key={user.id}
@@ -36,4 +55,4 @@ const Users = (props) => {
 }
 
 
-export default Users;
+export default Users

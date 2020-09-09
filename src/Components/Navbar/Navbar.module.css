@@ -3,7 +3,7 @@
     background-color: black;
     padding: 5%;
     border-radius: 20px;
-    box-shadow: 0.4em 0.4em 5px rgba(122,122,122,0.5);
+    box-shadow: 0.4em 0.4em 5px rgba(122, 122, 122, 0.5);
 }
 
 .item {
@@ -19,3 +19,11 @@
 .item a.active {
     color: gold;
 }
+
+@media (max-width: 575px) {
+    .sideBar {
+        position: fixed;
+        z-index: 222;
+    }
+}
+

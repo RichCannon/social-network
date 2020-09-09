@@ -29,7 +29,7 @@ const HeaderComponent = (props) => {
     }
 
     return (
-        <Header className={'header'}>
+        <Header className={s.header} >
             <NavLink to={'/profile'}>
                 <img className={s.siteLogo} alt={'Loading...'} src={logo}/>
             </NavLink>

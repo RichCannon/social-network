@@ -10,7 +10,7 @@ import UserOutlined from "@ant-design/icons/lib/icons/UserOutlined";
 const ProfileInfo = ({profile, changePhoto, status, updateStatus, myId, saveProfile}) => {
     const photoLarge = profile.photos.large;
     const {Title} = Typography;
-    let [editMode, setEditMode] = useState(false);
+    const [editMode, setEditMode] = useState(false);
 
     if (!profile) {
         return (<Preloader/>);
@@ -35,16 +35,14 @@ const ProfileInfo = ({profile, changePhoto, status, updateStatus, myId, saveProf
 
     return (
         <div>
-            <Row style={{marginLeft: '0px'}} gutter={24}>
-                <Col span={14} className={s.avaNameStatus}>
-                    <Row gutter={16}>
-                        <Col span={11}>
-                            <div>
-                                <Avatar className={s.profileImg} shape={"square"}
-                                        size={300} src={photoLarge} icon={<UserOutlined />} />
-                            </div>
+            <Row className={s.profile} gutter={{sm: 0, xl: 24}}>
+                <Col lg={12} sm={24} className={s.containerANS} >
+                    <Row gutter={16} className={s.avaNameStatus} >
+                        <Col sm={11}  xs={24} className={s.avaCont}>
+                                <Avatar  className={s.profileImg} shape={"square"}
+                                        src={photoLarge} icon={<UserOutlined />} />
                         </Col>
-                        <Col span={13} className={s.statusAndName}>
+                        <Col lg={10} xl={13} className={s.statusAndName}>
                             <Title level={3}>{profile.fullName}</Title>
                             <ProfileStatusHooks currentId={profile.userId} myId={myId} status={status}
                                                 updateStatus={updateStatus}/>
@@ -52,7 +50,7 @@ const ProfileInfo = ({profile, changePhoto, status, updateStatus, myId, saveProf
                         </Col>
                     </Row>
                 </Col>
-                <Col span={10}>
+                <Col lg={12} sm={24} className={s.containerData} >
                     {editMode
                         ? <ProfileDataEditForm profile={profile}
                                                initialValues={profile} onSubmit={onSubmit}/>

@@ -23,11 +23,11 @@ export const ProfileData = ({profile, activateEditMode, currentId, myId}) => {
         <Row className={s.profileInfo}>
             <Col span={24}>
                 <Row>
-                    <Col span={10}><b>lookingForAJob: </b></Col> <Col
+                    <Col span={10}><b>Looking For A Job: </b></Col> <Col
                     span={14}>{isLookingForAJob}</Col>
                 </Row>
                 <Row>
-                    <Col span={10}> <b>lookingForAJobDescription: </b>
+                    <Col span={10} > <b >Looking For A Job Description: </b>
                     </Col>
                     <Col span={14}>
                         {profile.lookingForAJobDescription || <NoData/>}
@@ -43,7 +43,7 @@ export const ProfileData = ({profile, activateEditMode, currentId, myId}) => {
                             <Col span={4} offset={3} key={key}>
                                 <b>{key}: </b>
                             </Col>
-                            <Col span={17}>
+                            <Col  xl={{span: 12, offset: 2}}  xxl={{offset: 1,span:16}}>
                                 {profile.contacts[key] || <NoData/>}
                             </Col>
                         </Row>

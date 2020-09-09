@@ -1,7 +1,8 @@
 import React from 'react';
+import s from './App.module.css';
 import './App.css';
 import Navbar from "./Components/Navbar/Navbar";
-import { HashRouter, Redirect, Route, Switch} from "react-router-dom";
+import {BrowserRouter/*, HashRouter*/, Redirect, Route, Switch} from "react-router-dom";
 import News from "./Components/News/News";
 import Music from "./Components/Music/Music";
 import Settings from "./Components/Settings/Settings";
@@ -19,12 +20,18 @@ import {Layout} from "antd";
 
 
 const DialogsContainer = React.lazy(() => import("./Components/Dialogs/DialogsContainer"));
-const {Content,Sider} = Layout;
+const {Content} = Layout;
 
 class App extends React.Component {
+
+
+
     componentDidMount() {
         this.props.initializingProcess();
     }
+
+
+
     render() {
         if (!this.props.initialized) {
             return <Preloader/>
@@ -33,13 +40,12 @@ class App extends React.Component {
 
 
         return (
-            <HashRouter> {/*HashRouter only for deploying on gitHub hosting*/}
-                <Layout style={{minHeight: '100vh', margin: 'auto', backgroundColor:'white'}}>
+            <BrowserRouter> {/*HashRouter only for deploying on gitHub hosting*/}
+                <Layout >
                     <HeaderContainer/>
-                    <Layout style={{width: '80%', margin: 'auto'}}>
-                        <Sider width={200}/>
+                    <Layout hasSider className={s.content} >
                         <Navbar/>
-                        <Content style={{margin: '1%', padding:'1%'}}>
+                        <Content className={s.mainContent}  >
                             <Switch>
                                 <Route render={() =>
                                     <ProfileContainer/>} path='/profile/:userId?'/>
@@ -58,7 +64,7 @@ class App extends React.Component {
                         </Content>
                     </Layout>
                 </Layout>
-            </HashRouter>
+            </BrowserRouter>
         );
     }
 }

@@ -42,7 +42,6 @@ const User = ({handlerToggleFollow, followedUsersId, user, isAuth}) => {
                 </div>
             </Col>
         </Row>
-
     )
 }
 

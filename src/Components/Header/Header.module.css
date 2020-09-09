@@ -1,13 +1,22 @@
 
 
-.header {
+/*.header {
     grid-area: h;
     background-color: greenyellow;
     border-radius: 20px;
     box-shadow: 0.4em 0.4em 5px rgba(122, 122, 122, 0.5);
     padding: 10px;
 
+}*/
+
+@media (max-width: 575px) {
+    .header {
+        position: fixed;
+        z-index: 222;
+        width: 100vw;
+    }
 }
+
 
 header img {
     width: 50px;
