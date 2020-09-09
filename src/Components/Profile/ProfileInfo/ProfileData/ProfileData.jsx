@@ -40,7 +40,7 @@ export const ProfileData = ({profile, activateEditMode, currentId, myId}) => {
                 {Object.keys(profile.contacts).map((key) => {
                     return (
                         <Row key={key}>
-                            <Col span={4} offset={3} key={key}>
+                            <Col md={{span: 4, offset:3}} span={5} offset={2}  key={key}>
                                 <b>{key}: </b>
                             </Col>
                             <Col  xl={{span: 12, offset: 2}}  xxl={{offset: 1,span:16}}>
